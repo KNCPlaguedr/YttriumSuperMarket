@@ -8,16 +8,16 @@ import java.sql.SQLException;
 public class JDBCconnection {
     
         
-    private Connection conexao;
+    private Connection connection;
     
-    public Connection getConexao() {
-        return conexao;
+    public Connection getConnection() {
+        return connection;
     }
     
-    public void conectar() throws SQLException{
+    public void connect() throws SQLException{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/yttrium","root","24071195");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/yttrium","root","24071195");
             
         }catch(ClassNotFoundException e){
             
@@ -26,10 +26,10 @@ public class JDBCconnection {
         }
     }
     
-     public void desconectar() {
+     public void disconnect() {
         try {
-            if(conexao != null && !conexao.isClosed()) {
-                conexao.close();
+            if(connection != null && !connection.isClosed()) {
+                connection.close();
                 System.out.println("Succesfully connected");
             }
         } catch (SQLException e) {

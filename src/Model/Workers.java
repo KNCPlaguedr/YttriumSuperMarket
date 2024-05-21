@@ -7,13 +7,6 @@ public class Workers {
     private String user;
     private String password;
 
-    public Workers(int id, String name, String surname, String user, String password) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.user = user;
-        this.password = password;
-    }
 
     public int getId() {
         return id;
